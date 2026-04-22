@@ -1,7 +1,15 @@
 import { readFileSync } from 'fs';
-import { join } from 'path';
+import { join, dirname } from 'path';
+import { fileURLToPath } from 'url';
 
-const dataPath = join(import.meta.dirname, '../data/data.json');
+// Fix __dirname
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+// Correct path
+const dataPath = join(__dirname, '../data/data.json');
+
+let ports = JSON.parse(readFileSync(dataPath, 'utf-8'));
 
 let ports = JSON.parse(readFileSync(dataPath, 'utf-8'));
 
