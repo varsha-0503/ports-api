@@ -11,7 +11,7 @@ const dataPath = join(__dirname, '../data/data.json');
 
 let ports = JSON.parse(readFileSync(dataPath, 'utf-8'));
 
-let ports = JSON.parse(readFileSync(dataPath, 'utf-8'));
+
 
 const ok=(res, data,status=200) =>
     res.status(status).json({ success: true, data });
